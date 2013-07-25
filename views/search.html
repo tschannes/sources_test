@@ -1,0 +1,24 @@
+
+
+<input type="text" placeholder="Enter your query here" ng-model="query">
+{{$scope.searchOptions.query}}
+<button class="btn" ng-click="searchSources()">Search Sources</button>
+
+<div ng-show="movies">
+  {{total}} Results found. 
+</div>
+<ul class="thumbnails">
+  <li class="span4" ng-repeat="item in items">
+    <div class="thumbnail">
+
+      <img ng-src="{{ item.volumeInfo.imageLinks.thumbnail }}" style="max-height:200px">
+      <h3>{{ item.volumeInfo.title}}</h3>
+      <p>{{ item.volumeInfo.subtitle }}</p>
+      <p>{{ item.volumeInfo.authors.toString() }}</p>
+      <p>{{ item.volumeInfo.description }}</p>
+      <p>{{ item.volumeInfo.publisher }}, {{ item.volumeInfo.publishedDate }}</p>
+      <hr>
+    </div>
+
+  </li>
+</ul>
